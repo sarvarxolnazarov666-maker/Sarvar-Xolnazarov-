@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sarvar Xolnazarov — Professional Ijtimoiy Xodim, AI Mutaxassis, Pedagog va Vikipedist">
+<meta name="keywords" content="Sarvar Xolnazarov, ijtimoiy xodim, social worker, AI, Uzbekistan, Wikipedia">
+<meta property="og:title" content="Sarvar Xolnazarov — Ijtimoiy Xodim & AI Mutaxassis">
+<meta property="og:description" content="Professional ijtimoiy xodim, pedagog va AI mutaxassis. Wikipedia musobaqasi g'olibi.">
+<title>Sarvar Xolnazarov — Ijtimoiy Xodim & AI Mutaxassis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;
+  --navy2:#0F1F3D;
+  --navy3:#162A50;
+  --teal:#1ABC9C;
+  --teal2:#17A589;
+  --teal3:#0E6655;
+  --gold:#D4AC0D;
+  --gold2:#B7950B;
+  --sky:#5DADE2;
+  --card:#111E35;
+  --card2:#162240;
+  --text:#EBF5FB;
+  --text2:#AEC6CF;
+  --text3:#6B8FA0;
+  --border:rgba(26,188,156,0.15);
+  --border2:rgba(255,255,255,0.07);
+  --fh:'Cormorant Garamond',serif;
+  --fb:'Outfit',sans-serif;
+  --fm:'JetBrains Mono',monospace;
+  --r:10px;
+  --r2:18px;
+  --sh:0 8px 32px rgba(0,0,0,0.45);
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--text);font-family:var(--fb);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--teal3);border-radius:2px}
+
+/* ── NAVIGATION ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:62px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+  background:rgba(10,22,40,0.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border2);
+  transition:background 0.3s;
+}
+.nav-logo{font-family:var(--fh);font-size:1.35rem;font-weight:700;color:var(--teal);cursor:pointer;letter-spacing:0.02em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:1.8rem}
+.nav-links a{
+  color:var(--text2);text-decoration:none;font-size:0.82rem;
+  font-weight:500;cursor:pointer;transition:color 0.2s;
+  letter-spacing:0.05em;text-transform:uppercase;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.lang-sw{display:flex;gap:3px;background:var(--navy3);border-radius:8px;padding:3px}
+.lb{
+  padding:4px 10px;border-radius:6px;border:none;
+  background:transparent;color:var(--text2);
+  font-size:0.72rem;font-family:var(--fb);cursor:pointer;
+  transition:all 0.2s;font-weight:600;letter-spacing:0.05em;
+}
+.lb.active{background:var(--teal);color:#0A1628}
+.ham{display:none;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer;padding:4px}
+
+/* ── HERO ── */
+#home{min-height:100vh;display:flex;align-items:center;padding:0 5%;position:relative;overflow:hidden}
+.hero-bg-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hex-pattern{
+  position:absolute;inset:0;opacity:0.04;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.6) 1px,transparent 0);
+  background-size:32px 32px;
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:0.12}
+.hero-orb1{width:600px;height:600px;background:var(--teal);top:-150px;right:-100px;animation:oFloat 9s ease-in-out infinite}
+.hero-orb2{width:500px;height:500px;background:#1A4E8C;bottom:-100px;left:-80px;animation:oFloat 11s ease-in-out infinite reverse}
+.hero-orb3{width:300px;height:300px;background:var(--gold);top:40%;left:30%;animation:oFloat 7s ease-in-out infinite 2s}
+@keyframes oFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(15px,-20px) scale(1.05)}}
+.hero-line{position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,var(--teal),transparent)}
+
+.hero-content{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr auto;
+  gap:4rem;align-items:center;
+  width:100%;max-width:1100px;margin:0 auto;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.25);
+  border-radius:100px;padding:5px 15px;
+  font-size:0.73rem;font-weight:600;color:var(--teal);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.2rem;
+}
+.bdot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero-name{font-family:var(--fh);font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.0;margin-bottom:0.3rem;letter-spacing:-0.01em}
+.hero-name .hl{color:var(--teal)}
+.hero-surname{font-family:var(--fh);font-size:clamp(2rem,5vw,3.8rem);font-weight:400;color:var(--text2);line-height:1.1;margin-bottom:1.2rem}
+.hero-roles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem}
+.role-pill{padding:5px 14px;border-radius:100px;font-size:0.75rem;font-weight:600;border:1px solid;letter-spacing:0.03em}
+.rp1{border-color:rgba(26,188,156,0.4);color:var(--teal);background:rgba(26,188,156,0.08)}
+.rp2{border-color:rgba(212,172,13,0.4);color:var(--gold);background:rgba(212,172,13,0.08)}
+.rp3{border-color:rgba(93,173,226,0.4);color:var(--sky);background:rgba(93,173,226,0.08)}
+.rp4{border-color:rgba(255,255,255,0.2);color:var(--text2);background:rgba(255,255,255,0.04)}
+.hero-desc{color:var(--text2);max-width:520px;font-size:0.95rem;line-height:1.75;margin-bottom:2rem}
+.hero-desc strong{color:var(--teal)}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn{padding:11px 26px;border-radius:100px;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.25s;border:none;font-family:var(--fb);letter-spacing:0.03em}
+.btn-p{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#0A1628}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,188,156,0.35)}
+.btn-o{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-o:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.hstat-n{font-family:var(--fh);font-size:2.2rem;font-weight:700;color:var(--teal);line-height:1}
+.hstat-l{font-size:0.75rem;color:var(--text3);margin-top:3px;font-weight:500;letter-spacing:0.03em}
+
+/* PHOTO */
+.hero-photo-wrap{position:relative;flex-shrink:0}
+.hero-photo{width:260px;height:330px;border-radius:20px;overflow:hidden;position:relative;border:1px solid rgba(26,188,156,0.2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.photo-glow{position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,var(--teal),var(--sky),var(--gold));z-index:-1;opacity:0.4;animation:glowPulse 3s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:0.3}50%{opacity:0.6}}
+.photo-badge{
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
+  background:var(--card2);border:1px solid var(--border);border-radius:100px;
+  padding:8px 20px;white-space:nowrap;font-size:0.78rem;font-weight:600;
+  color:var(--teal);box-shadow:var(--sh);
+}
+.cert-badge{
+  position:absolute;top:-12px;right:-12px;background:var(--gold);
+  color:#0A1628;font-size:0.65rem;font-weight:700;
+  padding:6px 10px;border-radius:100px;letter-spacing:0.05em;
+  box-shadow:0 4px 12px rgba(212,172,13,0.4);
+}
+
+/* ── SECTIONS ── */
+section{padding:90px 5% 70px}
+.sec-header{text-align:center;margin-bottom:3.5rem}
+.sec-tag{
+  display:inline-block;font-size:0.7rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);
+  background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.2);
+  padding:4px 14px;border-radius:100px;margin-bottom:0.8rem;
+}
+.sec-title{font-family:var(--fh);font-size:clamp(2rem,5vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:0.8rem}
+.sec-desc{color:var(--text2);max-width:520px;margin:0 auto;font-size:0.92rem}
+
+/* ── ABOUT ── */
+#about{background:var(--navy2)}
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start}
+.about-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:2rem;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--sky))}
+.about-avatar{width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;margin-bottom:1.5rem;border:1px solid var(--border)}
+.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about-contact-item{display:flex;align-items:center;gap:10px;margin-bottom:0.8rem}
+.aci-icon{width:30px;height:30px;border-radius:8px;background:rgba(26,188,156,0.1);border:1px solid rgba(26,188,156,0.2);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0}
+.aci-val{font-size:0.82rem;color:var(--text2)}
+.aci-val strong{color:var(--text);display:block;font-size:0.78rem;margin-bottom:1px}
+.lang-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.8rem}
+.lchip{padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.15);color:var(--teal)}
+.lchip.ru{background:rgba(93,173,226,0.08);border-color:rgba(93,173,226,0.2);color:var(--sky)}
+.lchip.en{background:rgba(212,172,13,0.08);border-color:rgba(212,172,13,0.2);color:var(--gold)}
+.lchip.old{background:rgba(255,255,255,0.04);border-color:var(--border2);color:var(--text3)}
+
+.about-right h3{font-family:var(--fh);font-size:1.9rem;font-weight:700;margin-bottom:0.7rem;line-height:1.2}
+.about-right p{color:var(--text2);font-size:0.9rem;line-height:1.8;margin-bottom:1rem}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin:1.5rem 0}
+.skill-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:10px 12px}
+.sk-top{display:flex;justify-content:space-between;margin-bottom:5px;font-size:0.78rem;font-weight:500}
+.sk-pct{color:var(--teal);font-family:var(--fm);font-size:0.72rem}
+.sk-bar{height:3px;background:var(--navy3);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--teal),var(--sky))}
+.tl{margin-top:1.5rem}
+.tl-item{display:flex;gap:12px;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border2)}
+.tl-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.tl-ic{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;margin-top:2px}
+.tl-ic.edu{background:rgba(212,172,13,0.12);border:1px solid rgba(212,172,13,0.25)}
+.tl-ic.work{background:rgba(26,188,156,0.12);border:1px solid rgba(26,188,156,0.25)}
+.tl-ic.ach{background:rgba(93,173,226,0.12);border:1px solid rgba(93,173,226,0.25)}
+.tl-yr{font-size:0.7rem;color:var(--teal);font-family:var(--fm);font-weight:500}
+.tl-role{font-weight:600;font-size:0.88rem;margin:2px 0 1px}
+.tl-place{font-size:0.78rem;color:var(--text2)}
+
+/* ── SERVICES ── */
+#services{background:var(--navy)}
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
+.sv-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:1.8rem;transition:all 0.3s;position:relative;overflow:hidden;cursor:default}
+.sv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.sv-card:hover{border-color:rgba(26,188,156,0.2);transform:translateY(-4px);box-shadow:var(--sh)}
+.sv-card:hover::after{transform:scaleX(1)}
+.sv-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.sv-icon.g{background:rgba(26,188,156,0.1);border:1px solid rgba(26,188,156,0.2)}
+.sv-icon.b{background:rgba(93,173,226,0.1);border:1px solid rgba(93,173,226,0.2)}
+.sv-icon.y{background:rgba(212,172,13,0.1);border:1px solid rgba(212,172,13,0.2)}
+.sv-title{font-family:var(--fh);font-size:1.15rem;font-weight:700;margin-bottom:0.6rem}
+.sv-desc{color:var(--text2);font-size:0.83rem;line-height:1.7;margin-bottom:1rem}
+.sv-tags{display:flex;flex-wrap:wrap;gap:5px}
+.stag{padding:2px 9px;border-radius:100px;font-size:0.68rem;font-weight:600}
+.stag.g{background:rgba(26,188,156,0.08);color:var(--teal);border:1px solid rgba(26,188,156,0.15)}
+.stag.b{background:rgba(93,173,226,0.08);color:var(--sky);border:1px solid rgba(93,173,226,0.15)}
+.stag.y{background:rgba(212,172,13,0.08);color:var(--gold);border:1px solid rgba(212,172,13,0.15)}
+
+/* ── ACHIEVEMENTS ── */
+#achievements{background:var(--navy2)}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
+.ach-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:1.8rem;transition:all 0.3s}
+.ach-card:hover{transform:translateY(-3px);border-color:rgba(212,172,13,0.2)}
+.ach-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(212,172,13,0.08);border:1px solid rgba(212,172,13,0.2);border-radius:100px;padding:3px 10px;font-size:0.68rem;font-weight:600;color:var(--gold);margin-bottom:0.8rem}
+.ach-title{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
+.ach-desc{color:var(--text2);font-size:0.82rem;line-height:1.65}
+
+/* ── PORTFOLIO ── */
+#portfolio{background:var(--navy)}
+.pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
+.pf-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);overflow:hidden;transition:all 0.3s;cursor:pointer}
+.pf-card:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:rgba(26,188,156,0.15)}
+.pf-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.pf-body{padding:1.3rem}
+.pf-title{font-family:var(--fh);font-size:1.05rem;font-weight:700;margin-bottom:0.35rem}
+.pf-desc{color:var(--text2);font-size:0.8rem;line-height:1.55;margin-bottom:0.8rem}
+
+/* ── CONTACT ── */
+#contact{background:var(--navy)}
+.ct-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;max-width:1000px;margin:0 auto;align-items:start}
+.ct-info h3{font-family:var(--fh);font-size:1.7rem;font-weight:700;margin-bottom:0.7rem}
+.ct-info p{color:var(--text2);margin-bottom:1.8rem;line-height:1.7;font-size:0.9rem}
+.ct-item{display:flex;align-items:center;gap:11px;margin-bottom:1.1rem}
+.ct-ic{width:38px;height:38px;border-radius:10px;background:rgba(26,188,156,0.08);border:1px solid rgba(26,188,156,0.18);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.ct-det strong{color:var(--text);display:block;font-size:0.85rem;margin-bottom:1px}
+.ct-det span{font-size:0.8rem;color:var(--text2)}
+.social-row{display:flex;gap:0.6rem;margin-top:1.5rem}
+.soc-btn{width:36px;height:36px;border-radius:9px;background:var(--card);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:0.85rem;color:var(--text2);text-decoration:none}
+.soc-btn:hover{border-color:var(--teal);color:var(--teal);background:rgba(26,188,156,0.08)}
+.ct-form{display:flex;flex-direction:column;gap:0.9rem}
+.fg label{display:block;font-size:0.75rem;font-weight:600;color:var(--text2);margin-bottom:5px;letter-spacing:0.04em;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:var(--r);padding:11px 13px;color:var(--text);font-family:var(--fb);font-size:0.86rem;outline:none;transition:border-color 0.2s}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--teal)}
+.fg select option{background:var(--card)}
+.fg textarea{height:100px;resize:none}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+.send-btn{padding:12px 26px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#0A1628;border:none;border-radius:100px;font-weight:700;font-size:0.86rem;cursor:pointer;transition:all 0.25s;font-family:var(--fb);align-self:flex-start}
+.send-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,188,156,0.3)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-copy{font-size:0.76rem;color:var(--text3)}
+.ft-love{color:var(--teal)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{font-size:0.76rem;color:var(--text3);cursor:pointer;text-decoration:none;transition:color 0.2s}
+.ft-links a:hover{color:var(--teal)}
+
+/* ── AI CHAT ── */
+#cfab{position:fixed;bottom:22px;right:22px;z-index:2000}
+.ctog{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--sky));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 8px 24px rgba(26,188,156,0.4);transition:all 0.3s;position:relative}
+.ctog:hover{transform:scale(1.1)}
+.cnotif{position:absolute;top:-2px;right:-2px;width:15px;height:15px;background:#E74C3C;border-radius:50%;border:2px solid var(--navy);font-size:0.55rem;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.cwin{position:absolute;bottom:66px;right:0;width:340px;background:var(--navy2);border:1px solid var(--border);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden;display:none;flex-direction:column;max-height:480px}
+.cwin.open{display:flex}
+.chdr{padding:0.9rem 1.1rem;background:linear-gradient(135deg,rgba(26,188,156,0.08),rgba(93,173,226,0.06));border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:9px}
+.cav{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid rgba(26,188,156,0.3);flex-shrink:0}
+.cav img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.cin-name{font-weight:600;font-size:0.86rem}
+.cin-st{font-size:0.68rem;color:var(--teal);display:flex;align-items:center;gap:4px}
+.cstdot{width:5px;height:5px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+.cclose{margin-left:auto;background:none;border:none;color:var(--text2);cursor:pointer;font-size:1rem;padding:2px;transition:color 0.2s}
+.cclose:hover{color:var(--text)}
+.cmsgs{flex:1;overflow-y:auto;padding:0.9rem;display:flex;flex-direction:column;gap:0.7rem;scroll-behavior:smooth}
+.cmsgs::-webkit-scrollbar{width:2px}
+.cmsgs::-webkit-scrollbar-thumb{background:var(--border)}
+.cmsg{max-width:84%;padding:9px 12px;border-radius:13px;font-size:0.82rem;line-height:1.5;animation:mIn 0.3s ease;white-space:pre-line}
+@keyframes mIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cmai{background:var(--card);border:1px solid var(--border2);align-self:flex-start;border-bottom-left-radius:3px}
+.cmu{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#0A1628;align-self:flex-end;font-weight:500;border-bottom-right-radius:3px}
+.tdots{display:flex;gap:3px;padding:10px 12px;background:var(--card);border:1px solid var(--border2);border-radius:13px;border-bottom-left-radius:3px;width:fit-content}
+.td{width:5px;height:5px;background:var(--text3);border-radius:50%;animation:db 1.2s infinite}
+.td:nth-child(2){animation-delay:.2s}.td:nth-child(3){animation-delay:.4s}
+@keyframes db{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.cqr{display:flex;flex-wrap:wrap;gap:5px;padding:0 0.9rem 0.7rem}
+.qrb{padding:4px 11px;background:rgba(26,188,156,0.07);border:1px solid rgba(26,188,156,0.18);border-radius:100px;font-size:0.7rem;color:var(--teal);cursor:pointer;transition:all 0.2s;font-family:var(--fb)}
+.qrb:hover{background:rgba(26,188,156,0.14)}
+.cinrow{display:flex;gap:7px;padding:0.7rem;border-top:1px solid var(--border2)}
+.cinp{flex:1;background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:8px 14px;color:var(--text);font-family:var(--fb);font-size:0.82rem;outline:none;transition:border-color 0.2s}
+.cinp:focus{border-color:var(--teal)}
+.csend{width:34px;height:34px;border-radius:50%;background:var(--teal);border:none;color:#0A1628;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.95rem;transition:all 0.2s;flex-shrink:0}
+.csend:hover{background:var(--teal2);transform:scale(1.08)}
+
+/* ── TOAST ── */
+.toast{position:fixed;top:76px;right:22px;background:var(--card);border:1px solid var(--teal);border-radius:var(--r);padding:12px 18px;z-index:3000;display:none;align-items:center;gap:9px;font-size:0.82rem;box-shadow:var(--sh);max-width:280px}
+.toast.show{display:flex}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .ham{display:block}
+  .hero-content{grid-template-columns:1fr;padding-top:90px}
+  .hero-photo-wrap{display:none}
+  .about-grid,.ct-wrap{grid-template-columns:1fr;gap:2rem}
+  .frow{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  .cwin{width:300px}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  section{padding:80px 4% 50px}
+  .sv-grid,.ach-grid,.pf-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo" onclick="goTo('home')">SX<span>.</span></div>
+  <div class="nav-links" id="navlinks">
+    <a onclick="goTo('home')" class="active" id="n0" data-uz="Bosh sahifa" data-ru="Главная" data-en="Home">Bosh sahifa</a>
+    <a onclick="goTo('about')" id="n1" data-uz="Haqida" data-ru="Обо мне" data-en="About">Haqida</a>
+    <a onclick="goTo('services')" id="n2" data-uz="Xizmatlar" data-ru="Услуги" data-en="Services">Xizmatlar</a>
+    <a onclick="goTo('achievements')" id="n3" data-uz="Yutuqlar" data-ru="Достижения" data-en="Achievements">Yutuqlar</a>
+    <a onclick="goTo('portfolio')" id="n4" data-uz="Portfolio" data-ru="Портфолио" data-en="Portfolio">Portfolio</a>
+    <a onclick="goTo('contact')" id="n5" data-uz="Aloqa" data-ru="Контакт" data-en="Contact">Aloqa</a>
+    <div class="lang-sw">
+      <button class="lb active" onclick="setLang('uz')">UZ</button>
+      <button class="lb" onclick="setLang('ru')">RU</button>
+      <button class="lb" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+  <button class="ham" onclick="toggleNav()">☰</button>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-bg-wrap">
+    <div class="hex-pattern"></div>
+    <div class="hero-orb hero-orb1"></div>
+    <div class="hero-orb hero-orb2"></div>
+    <div class="hero-orb hero-orb3"></div>
+    <div class="hero-line"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="bdot"></span>
+        <span id="hbadge" data-uz="Ijtimoiy Xodim & AI Mutaxassis" data-ru="Социальный работник & AI Специалист" data-en="Social Worker & AI Specialist">Ijtimoiy Xodim & AI Mutaxassis</span>
+      </div>
+      <div class="hero-name"><span class="hl">Sarvar</span></div>
+      <div class="hero-surname">Xolnazarov</div>
+      <div class="hero-roles">
+        <span class="role-pill rp1" id="rp1" data-uz="Ijtimoiy Xodim" data-ru="Социальный работник" data-en="Social Worker">Ijtimoiy Xodim</span>
+        <span class="role-pill rp2" id="rp2" data-uz="AI Mutaxassis" data-ru="AI Специалист" data-en="AI Specialist">AI Mutaxassis</span>
+        <span class="role-pill rp3" id="rp3" data-uz="Pedagog" data-ru="Педагог" data-en="Educator">Pedagog</span>
+        <span class="role-pill rp4" id="rp4" data-uz="Vikipedist" data-ru="Википедист" data-en="Wikipedist">Vikipedist</span>
+      </div>
+      <p class="hero-desc" id="hdesc"
+         data-uz="Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'olibi</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi."
+         data-ru="Профессиональный социальный работник и педагог. Опытный специалист в социальных услугах, методике обучения. <strong>Победитель конкурса Википедии 2023</strong> — автор 1000+ статей."
+         data-en="Professional social worker and educator. Experienced specialist in social services and educational methodology. <strong>Wikipedia Competition Winner 2023</strong> — author of 1000+ articles.">
+        Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'olibi</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-p" onclick="goTo('services')" id="hb1" data-uz="Xizmatlarim" data-ru="Мои услуги" data-en="My Services">Xizmatlarim</button>
+        <button class="btn btn-o" onclick="goTo('contact')" id="hb2" data-uz="Bog'lanish" data-ru="Связаться" data-en="Contact Me">Bog'lanish</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">5+</div><div class="hstat-l" id="hs1" data-uz="Yil tajriba" data-ru="Лет опыта" data-en="Years exp.">Yil tajriba</div></div>
+        <div class="hstat"><div class="hstat-n">1000+</div><div class="hstat-l" id="hs2" data-uz="Wikipedia maqola" data-ru="Статей Wikipedia" data-en="Wikipedia articles">Wikipedia maqola</div></div>
+        <div class="hstat"><div class="hstat-n">200+</div><div class="hstat-l" id="hs3" data-uz="Mijoz yordamlandi" data-ru="Клиентов" data-en="Clients helped">Mijoz yordamlandi</div></div>
+      </div>
+    </div>
+    <!-- 
+      RASM: Rasmingizni "images/sarvar.jpg" papkaga joylashtiring
+      va quyidagi src ni shunga o'zgartiring
+    -->
+    <div class="hero-photo-wrap">
+      <div class="cert-badge">AI Leaders 2026 ★</div>
+      <div class="photo-glow"></div>
+      <div class="hero-photo">
+        <img src="images/sarvar.jpg" alt="Sarvar Xolnazarov" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:5rem;\'>👨‍💼</div>'">
+      </div>
+      <div class="photo-badge" id="phbadge" data-uz="Toshkent, O'zbekiston" data-ru="Ташкент, Узбекистан" data-en="Tashkent, Uzbekistan">📍 Toshkent, O'zbekiston</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════ -->
+<section id="about">
+  <div class="sec-header">
+    <div class="sec-tag" id="abtag" data-uz="Men haqimda" data-ru="Обо мне" data-en="About Me">Men haqimda</div>
+    <h2 class="sec-title" id="abtitle" data-uz="Sarvar Xolnazarov kim?" data-ru="Кто такой Сарвар Холназаров?" data-en="Who is Sarvar Xolnazarov?">Sarvar Xolnazarov kim?</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-avatar">
+        <img src="images/sarvar.jpg" alt="Sarvar Xolnazarov" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📍</div>
+        <div class="aci-val"><strong id="acl1" data-uz="Manzil" data-ru="Адрес" data-en="Location">Manzil</strong><span id="acv1" data-uz="O'zbekiston" data-ru="Узбекистан" data-en="Uzbekistan">O'zbekiston</span></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📱</div>
+        <div class="aci-val"><strong id="acl2" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 94 576 20 36</span></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📧</div>
+        <div class="aci-val"><strong id="acl3" data-uz="Elektron pochta" data-ru="Эл. почта" data-en="Email">Elektron pochta</strong><span id="acv3" data-uz="So'rov bo'yicha" data-ru="По запросу" data-en="Upon request">So'rov bo'yicha</span></div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;font-weight:600;color:var(--text2);margin-bottom:0.5rem;letter-spacing:0.04em;text-transform:uppercase" id="langlab" data-uz="Tillar" data-ru="Языки" data-en="Languages">Tillar</div>
+        <div class="lang-chips">
+          <span class="lchip" id="lc1" data-uz="O'zbek (Ona tili)" data-ru="Узбекский (Родной)" data-en="Uzbek (Native)">O'zbek (Ona tili)</span>
+          <span class="lchip en" id="lc2" data-uz="Ingliz (B1)" data-ru="Английский (B1)" data-en="English (B1)">Ingliz (B1)</span>
+          <span class="lchip ru" id="lc3" data-uz="Rus (O'rta)" data-ru="Русский (Средний)" data-en="Russian (Intermediate)">Rus (O'rta)</span>
+          <span class="lchip old" id="lc4" data-uz="Eski o'zbek yozuvi" data-ru="Старый узб. шрифт" data-en="Old Uzbek writing">Eski o'zbek yozuvi</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <h3 id="abh3" data-uz="Insonlarga xizmat — mening hayot yo'lim" data-ru="Служение людям — мой жизненный путь" data-en="Serving people — my life path">Insonlarga xizmat — mening hayot yo'lim</h3>
+      <p id="abp1" data-uz="Professional ijtimoiy xodim va pedagog sifatida ijtimoiy xizmatlar, ta'lim metodikasi, tadqiqot va raqamli bilim rivojlantirish sohasida tajribaga egaman. Muloqot, tahliliy fikrlash, muammo yechish va jamoat yordamida malakali mutaxassisman." data-ru="Как профессиональный социальный работник и педагог, имею опыт в области социальных услуг, методологии образования и развития цифровых знаний. Квалифицированный специалист в общении, аналитическом мышлении и решении проблем." data-en="As a professional social worker and educator, I have experience in social services, educational methodology, research, and digital knowledge development. Skilled in communication, analytical thinking, problem-solving, and community support.">Professional ijtimoiy xodim va pedagog sifatida ijtimoiy xizmatlar, ta'lim metodikasi, tadqiqot va raqamli bilim rivojlantirish sohasida tajribaga egaman.</p>
+      <p id="abp2" data-uz="Five Million AI Leaders dasturi ishtirokchisi — suniy intellekt, innovatsiya, ta'lim va strategik rivojlanishga qiziquvchi mutaxassis. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'olibi bo'ldim." data-ru="Участник программы Five Million AI Leaders — специалист, увлечённый ИИ, инновациями и стратическим развитием. В 2023 году написал 1000+ статей и стал победителем конкурса Википедии." data-en="Five Million AI Leaders program participant — passionate about AI, innovation, education and strategic development. Won the Wikipedia competition in 2023 by writing 1000+ articles for Uzbek Wikipedia.">Five Million AI Leaders dasturi ishtirokchisi. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'olibi bo'ldim.</p>
+      <div class="skills-wrap">
+        <div class="skill-card"><div class="sk-top"><span id="sk1" data-uz="Ijtimoiy Ish" data-ru="Социальная работа" data-en="Social Work">Ijtimoiy Ish</span><span class="sk-pct">95%</span></div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
+        <div class="skill-card"><div class="sk-top"><span id="sk2" data-uz="Ta'lim Metodikasi" data-ru="Методика обучения" data-en="Edu. Methodology">Ta'lim Metodikasi</span><span class="sk-pct">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
+        <div class="skill-card"><div class="sk-top"><span id="sk3" data-uz="AI & Prompt" data-ru="AI & Промт" data-en="AI & Prompt Eng.">AI & Prompt Eng.</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%"></div></div></div>
+        <div class="skill-card"><div class="sk-top"><span id="sk4" data-uz="Kontent Yaratish" data-ru="Создание контента" data-en="Content Creation">Kontent Yaratish</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%"></div></div></div>
+        <div class="skill-card"><div class="sk-top"><span id="sk5" data-uz="Strategik Fikrlash" data-ru="Стратег. мышление" data-en="Strategic Thinking">Strategik Fikrlash</span><span class="sk-pct">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+        <div class="skill-card"><div class="sk-top"><span id="sk6" data-uz="Tadqiqot" data-ru="Исследование" data-en="Research">Tadqiqot</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div></div>
+      </div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-ic edu">🎓</div>
+          <div><div class="tl-yr">2019–2023</div><div class="tl-role" id="tl1r" data-uz="Bakalavr — Ta'lim" data-ru="Бакалавр — Образование" data-en="Bachelor — Education">Bakalavr — Ta'lim</div><div class="tl-place" id="tl1p" data-uz="Toshkent Davlat Pedagogika Universiteti" data-ru="Ташкентский гос. педагогический университет" data-en="Tashkent State Pedagogical University">Toshkent Davlat Pedagogika Universiteti</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-ic work">💼</div>
+          <div><div class="tl-yr">2024 – hozir</div><div class="tl-role" id="tl2r" data-uz="Professional Ijtimoiy Xodim" data-ru="Проф. социальный работник" data-en="Professional Social Worker">Professional Ijtimoiy Xodim</div><div class="tl-place" id="tl2p" data-uz="O'zbekiston" data-ru="Узбекистан" data-en="Uzbekistan">O'zbekiston</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-ic work">📝</div>
+          <div><div class="tl-yr">2024</div><div class="tl-role" id="tl3r" data-uz="Metodist — Talim Media MCHJ" data-ru="Методист — Talim Media ООО" data-en="Methodologist — Talim Media LLC">Metodist — Talim Media MCHJ</div><div class="tl-place" id="tl3p" data-uz="Loyiha va kontent boshqaruvi" data-ru="Управление проектами и контентом" data-en="Project & content management">Loyiha va kontent boshqaruvi</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-ic ach">🤖</div>
+          <div><div class="tl-yr">2025–2026</div><div class="tl-role" id="tl4r" data-uz="Five Million AI Leaders — Ishtirokchi" data-ru="Five Million AI Leaders — Участник" data-en="Five Million AI Leaders — Participant">Five Million AI Leaders — Ishtirokchi</div><div class="tl-place" id="tl4p" data-uz="Prompt muhandislik & xalqaro tashabbus" data-ru="Промт-инжиниринг & международная инициатива" data-en="Prompt engineering & international initiative">Prompt muhandislik & xalqaro tashabbus</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section id="services">
+  <div class="sec-header">
+    <div class="sec-tag" id="svtag" data-uz="Xizmatlar" data-ru="Услуги" data-en="Services">Xizmatlar</div>
+    <h2 class="sec-title" id="svtitle" data-uz="Nima taklif qilaman?" data-ru="Что я предлагаю?" data-en="What I Offer">Nima taklif qilaman?</h2>
+    <p class="sec-desc" id="svdesc" data-uz="Ijtimoiy himoya, ta'lim va AI texnologiyalari birlashtirilgan zamonaviy xizmatlar" data-ru="Современные услуги, объединяющие социальную защиту, образование и AI технологии" data-en="Modern services combining social protection, education and AI technologies">Ijtimoiy himoya, ta'lim va AI texnologiyalari birlashtirilgan zamonaviy xizmatlar</p>
+  </div>
+  <div class="sv-grid">
+    <div class="sv-card">
+      <div class="sv-icon g">🤝</div>
+      <div class="sv-title" id="s1t" data-uz="Ijtimoiy Konsultatsiya" data-ru="Социальная консультация" data-en="Social Consultation">Ijtimoiy Konsultatsiya</div>
+      <div class="sv-desc" id="s1d" data-uz="Oila, mojarolar, ijtimoiy himoya va individual muammolar bo'yicha professional maslahat. Har bir mijozga maxfiylik va individual yondashuv kafolati." data-ru="Профессиональные консультации по вопросам семьи, конфликтов, социальной защиты. Гарантия конфиденциальности и индивидуального подхода." data-en="Professional advice on family, conflicts, social protection and individual issues. Guarantee of confidentiality and individual approach.">Oila, mojarolar, ijtimoiy himoya va individual muammolar bo'yicha professional maslahat.</div>
+      <div class="sv-tags"><span class="stag g">Online</span><span class="stag g">Offline</span><span class="stag b" id="st1" data-uz="Bepul 1-sessiya" data-ru="1-я сессия бесплатно" data-en="1st session free">Bepul 1-sessiya</span></div>
+    </div>
+    <div class="sv-card">
+      <div class="sv-icon b">🤖</div>
+      <div class="sv-title" id="s2t" data-uz="AI Yordamchi Xizmati" data-ru="Услуга AI Ассистента" data-en="AI Assistant Service">AI Yordamchi Xizmati</div>
+      <div class="sv-desc" id="s2d" data-uz="Suniy intellekt yordamida 24/7 ijtimoiy maslahat va resurslar. Prompt muhandislik ko'nikmalarim asosida AI vositalarini ijtimoiy sohalarga tatbiq etaman." data-ru="Круглосуточные социальные консультации с помощью ИИ. Применяю инструменты ИИ в социальных сферах на основе промт-инжиниринга." data-en="24/7 social advice using AI. Apply AI tools to social areas based on prompt engineering skills.">Suniy intellekt yordamida 24/7 ijtimoiy maslahat va AI vositalarini tatbiq etish.</div>
+      <div class="sv-tags"><span class="stag b">AI</span><span class="stag b">24/7</span><span class="stag g">Prompt Eng.</span></div>
+    </div>
+    <div class="sv-card">
+      <div class="sv-icon g">👨‍👩‍👧</div>
+      <div class="sv-title" id="s3t" data-uz="Oila & Jamoat Yordami" data-ru="Поддержка семьи & общества" data-en="Family & Community Support">Oila & Jamoat Yordami</div>
+      <div class="sv-desc" id="s3d" data-uz="Oila munosabatlarini mustahkamlash, jamoat rivojlantirish va ijtimoiy integratsiya dasturlari. Muhtoj oilalarga resurslar va yo'nalishlar taqdim etish." data-ru="Укрепление семейных отношений, развитие общества и программы социальной интеграции. Предоставление ресурсов нуждающимся семьям." data-en="Strengthening family relationships, community development and social integration programs. Providing resources to families in need.">Oila munosabatlarini mustahkamlash va jamoat rivojlantirish dasturlari.</div>
+      <div class="sv-tags"><span class="stag g" id="st3a" data-uz="Guruh" data-ru="Группа" data-en="Group">Guruh</span><span class="stag g" id="st3b" data-uz="Individual" data-ru="Индивид." data-en="Individual">Individual</span></div>
+    </div>
+    <div class="sv-card">
+      <div class="sv-icon y">🎓</div>
+      <div class="sv-title" id="s4t" data-uz="Ta'lim Metodikasi & Treninglar" data-ru="Методика обучения & Тренинги" data-en="Educational Methodology & Trainings">Ta'lim Metodikasi & Treninglar</div>
+      <div class="sv-desc" id="s4d" data-uz="Pedagog va ijtimoiy xodimlar uchun maxsus treninglar. Zamonaviy ta'lim metodlari, AI vositalari va raqamli savodxonlik bo'yicha kurslar." data-ru="Специальные тренинги для педагогов и социальных работников. Курсы по современным методам обучения, инструментам ИИ и цифровой грамотности." data-en="Special trainings for educators and social workers. Courses on modern teaching methods, AI tools and digital literacy.">Pedagog va ijtimoiy xodimlar uchun zamonaviy ta'lim metodlari va AI kurslari.</div>
+      <div class="sv-tags"><span class="stag y" id="st4a" data-uz="Korporativ" data-ru="Корпоратив" data-en="Corporate">Korporativ</span><span class="stag b">Online</span></div>
+    </div>
+    <div class="sv-card">
+      <div class="sv-icon b">📝</div>
+      <div class="sv-title" id="s5t" data-uz="Kontent Yaratish & Wikipedia" data-ru="Создание контента & Википедия" data-en="Content Creation & Wikipedia">Kontent Yaratish & Wikipedia</div>
+      <div class="sv-desc" id="s5d" data-uz="Ochiq bilim platformalari uchun sifatli kontent yaratish. O'zbek Vikipediyasiga 1000+ maqola yozgan tajribam asosida bilimlarni raqamlashtirish." data-ru="Создание качественного контента для открытых платформ знаний. Оцифровка знаний на основе опыта написания 1000+ статей для узбекской Википедии." data-en="Creating quality content for open knowledge platforms. Digitizing knowledge based on 1000+ Wikipedia articles experience.">Ochiq bilim platformalari uchun sifatli kontent va Wikipedia maqolalari yaratish.</div>
+      <div class="sv-tags"><span class="stag b">Wikipedia</span><span class="stag g" id="st5" data-uz="Raqamlashtirish" data-ru="Оцифровка" data-en="Digitization">Raqamlashtirish</span></div>
+    </div>
+    <div class="sv-card">
+      <div class="sv-icon y">📊</div>
+      <div class="sv-title" id="s6t" data-uz="Ijtimoiy Tadqiqot & Tahlil" data-ru="Социальные исследования & Анализ" data-en="Social Research & Analysis">Ijtimoiy Tadqiqot & Tahlil</div>
+      <div class="sv-desc" id="s6d" data-uz="Ijtimoiy muammolarni ilmiy tahlil qilish, hisobotlar tayyorlash va yechimlar ishlab chiqish. Muassasalar va NGO lar uchun tadqiqot xizmatlari." data-ru="Научный анализ социальных проблем, подготовка отчётов и разработка решений. Исследовательские услуги для организаций и НГО." data-en="Scientific analysis of social problems, report preparation and solution development. Research services for organizations and NGOs.">Ijtimoiy muammolarni ilmiy tahlil qilish va muassasalar uchun tadqiqot xizmatlari.</div>
+      <div class="sv-tags"><span class="stag y" id="st6a" data-uz="Tadqiqot" data-ru="Исследование" data-en="Research">Tadqiqot</span><span class="stag y">NGO</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ACHIEVEMENTS
+═══════════════════════════════════════ -->
+<section id="achievements">
+  <div class="sec-header">
+    <div class="sec-tag" id="achtag" data-uz="Yutuqlar" data-ru="Достижения" data-en="Achievements">Yutuqlar</div>
+    <h2 class="sec-title" id="achtitle" data-uz="Sertifikatlar & Yutuqlar" data-ru="Сертификаты & Достижения" data-en="Certificates & Achievements">Sertifikatlar & Yutuqlar</h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <div class="ach-badge">★ 2026</div>
+      <div class="ach-title" id="ach1t" data-uz="Five Million AI Leaders" data-ru="Five Million AI Leaders" data-en="Five Million AI Leaders">Five Million AI Leaders</div>
+      <div class="ach-desc" id="ach1d" data-uz="Bajarilgan sertifikat — Prompt muhandislik va xalqaro tashabbus. Uzb-UAE hukumati qo'llab-quvvatlagan xalqaro AI dasturi ishtirokchisi." data-ru="Сертификат о завершении — Промт-инжиниринг и международная инициатива. Участник международной программы ИИ Узб-ОАЭ." data-en="Certificate of Completion — Prompt engineering and international initiative. Participant in the Uzb-UAE international AI program.">Bajarilgan sertifikat — Prompt muhandislik va xalqaro tashabbus. Uzb-UAE hukumati qo'llab-quvvatlagan AI dasturi.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-badge">🏆 2023</div>
+      <div class="ach-title" id="ach2t" data-uz="Wikipedia Musobaqasi G'olibi" data-ru="Победитель конкурса Википедии" data-en="Wikipedia Competition Winner">Wikipedia Musobaqasi G'olibi</div>
+      <div class="ach-desc" id="ach2d" data-uz="2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqada g'olib bo'ldim. Ommaviy bilimni kengaytirishga muhim hissa qo'shdim." data-ru="В 2023 году написал 1000+ статей для узбекской Википедии и стал победителем конкурса. Внёс значительный вклад в расширение общественных знаний." data-en="Won the 2023 Wikipedia competition by writing 1000+ articles for Uzbek Wikipedia. Made a significant contribution to expanding public knowledge.">1000+ maqola yaratib O'zbek Vikipediyasini boyitdim va milliy musobaqada g'olib bo'ldim.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-badge">📜 Davomiy</div>
+      <div class="ach-title" id="ach3t" data-uz="Professional Sertifikatlar" data-ru="Профессиональные сертификаты" data-en="Professional Certificates">Professional Sertifikatlar</div>
+      <div class="ach-desc" id="ach3d" data-uz="Ijtimoiy ish, ta'lim metodikasi, AI va biznes sohalari bo'yicha ko'plab professional sertifikatlar. Ko'nikmalar va malaka darajasini doimiy oshirib borish." data-ru="Многочисленные профессиональные сертификаты в области социальной работы, методики образования, ИИ и бизнеса. Постоянное повышение квалификации." data-en="Multiple professional certificates in social work, educational methodology, AI and business. Continuous improvement of skills and qualifications.">Ijtimoiy ish, AI va ta'lim sohasida ko'plab professional sertifikatlar va malaka tasdiqlari.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PORTFOLIO
+═══════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="sec-header">
+    <div class="sec-tag">Portfolio</div>
+    <h2 class="sec-title" id="pftitle" data-uz="Loyihalarim" data-ru="Мои проекты" data-en="My Projects">Loyihalarim</h2>
+  </div>
+  <div class="pf-grid">
+    <div class="pf-card">
+      <div class="pf-img" style="background:linear-gradient(135deg,rgba(26,188,156,0.1),rgba(93,173,226,0.08))">📚</div>
+      <div class="pf-body">
+        <div class="pf-title" id="p1t" data-uz="O'zbek Wikipedia Loyihasi" data-ru="Проект Узбекской Википедии" data-en="Uzbek Wikipedia Project">O'zbek Wikipedia Loyihasi</div>
+        <div class="pf-desc" id="p1d" data-uz="1000+ maqola — O'zbekiston tarixi, madaniyati va ilm-fani bo'yicha ommaviy bilimni raqamlashtirish" data-ru="1000+ статей — оцифровка общественных знаний по истории, культуре и науке Узбекистана" data-en="1000+ articles — digitizing public knowledge on Uzbekistan's history, culture and science">1000+ maqola — O'zbekiston bo'yicha ommaviy bilimni raqamlashtirish</div>
+        <div class="sv-tags" style="margin-top:0.7rem"><span class="stag b">Wikipedia</span><span class="stag g">Kontent</span></div>
+      </div>
+    </div>
+    <div class="pf-card">
+      <div class="pf-img" style="background:linear-gradient(135deg,rgba(212,172,13,0.1),rgba(26,188,156,0.05))">🤖</div>
+      <div class="pf-body">
+        <div class="pf-title" id="p2t" data-uz="AI Ijtimoiy Xizmat Loyihasi" data-ru="Проект AI Социальных услуг" data-en="AI Social Services Project">AI Ijtimoiy Xizmat Loyihasi</div>
+        <div class="pf-desc" id="p2d" data-uz="Ijtimoiy xizmatlarda AI vositalarini tatbiq etish — avtomatik yordam, tahlil va yo'nalish tizimi" data-ru="Применение инструментов ИИ в социальных услугах — автоматическая помощь, анализ и система направлений" data-en="Applying AI tools to social services — automated assistance, analysis and referral system">Ijtimoiy xizmatlarda AI vositalarini tatbiq etish loyihasi</div>
+        <div class="sv-tags" style="margin-top:0.7rem"><span class="stag b">AI</span><span class="stag g">Prompt</span></div>
+      </div>
+    </div>
+    <div class="pf-card">
+      <div class="pf-img" style="background:linear-gradient(135deg,rgba(93,173,226,0.1),rgba(212,172,13,0.05))">🎓</div>
+      <div class="pf-body">
+        <div class="pf-title" id="p3t" data-uz="Ta'lim Kontent Platformasi" data-ru="Платформа образовательного контента" data-en="Educational Content Platform">Ta'lim Kontent Platformasi</div>
+        <div class="pf-desc" id="p3d" data-uz="Talim Media MCHJ uchun ta'lim materiallari, loyihalar va onlayn kontent ishlab chiqish" data-ru="Разработка учебных материалов, проектов и онлайн-контента для Talim Media ООО" data-en="Developing educational materials, projects and online content for Talim Media LLC">Talim Media uchun ta'lim materiallari va onlayn kontent yaratish</div>
+        <div class="sv-tags" style="margin-top:0.7rem"><span class="stag y" id="pp3" data-uz="Ta'lim" data-ru="Образование" data-en="Education">Ta'lim</span><span class="stag b">Online</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════ -->
+<section id="contact">
+  <div class="sec-header">
+    <div class="sec-tag" id="cttag" data-uz="Aloqa" data-ru="Контакт" data-en="Contact">Aloqa</div>
+    <h2 class="sec-title" id="cttitle" data-uz="Bog'laning" data-ru="Свяжитесь" data-en="Get in Touch">Bog'laning</h2>
+  </div>
+  <div class="ct-wrap">
+    <div class="ct-info">
+      <h3 id="cth3" data-uz="Sizga yordam berishga tayyorman" data-ru="Готов вам помочь" data-en="Ready to help you">Sizga yordam berishga tayyorman</h3>
+      <p id="ctp" data-uz="Ijtimoiy maslahat, AI xizmatlari, treninglar yoki hamkorlik uchun murojaat qiling. 24 soat ichida javob beraman." data-ru="Обращайтесь по вопросам социальных консультаций, AI услуг, тренингов или сотрудничества. Отвечу в течение 24 часов." data-en="Contact for social consultation, AI services, trainings or collaboration. I will respond within 24 hours.">Ijtimoiy maslahat, AI xizmatlari, treninglar yoki hamkorlik uchun murojaat qiling.</p>
+      <div class="ct-item"><div class="ct-ic">📱</div><div class="ct-det"><strong id="ctl1" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 94 576 20 36</span></div></div>
+      <div class="ct-item"><div class="ct-ic">📍</div><div class="ct-det"><strong id="ctl2" data-uz="Joylashuv" data-ru="Местонахождение" data-en="Location">Joylashuv</strong><span id="ctv2" data-uz="O'zbekiston" data-ru="Узбекистан" data-en="Uzbekistan">O'zbekiston</span></div></div>
+      <div class="ct-item"><div class="ct-ic">🌐</div><div class="ct-det"><strong id="ctl3" data-uz="Tillar" data-ru="Языки" data-en="Languages">Tillar</strong><span id="ctv3" data-uz="O'zbek, Ingliz, Rus" data-ru="Узбекский, Английский, Русский" data-en="Uzbek, English, Russian">O'zbek, Ingliz, Rus</span></div></div>
+      <div class="ct-item"><div class="ct-ic">🕐</div><div class="ct-det"><strong id="ctl4" data-uz="Javob vaqti" data-ru="Время ответа" data-en="Response time">Javob vaqti</strong><span id="ctv4" data-uz="24 soat ichida" data-ru="В течение 24 часов" data-en="Within 24 hours">24 soat ichida</span></div></div>
+      <!-- IJTIMOIY TARMOQLAR: href larni o'z havolalaringizga almashtiring -->
+      <div class="social-row">
+        <a class="soc-btn" href="https://t.me/yourusername" target="_blank" title="Telegram">✈</a>
+        <a class="soc-btn" href="https://instagram.com/yourusername" target="_blank" title="Instagram">📸</a>
+        <a class="soc-btn" href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">💼</a>
+        <a class="soc-btn" href="https://uz.wikipedia.org/wiki/User:yourusername" target="_blank" title="Wikipedia">📖</a>
+      </div>
+    </div>
+    <div class="ct-form">
+      <div class="frow">
+        <div class="fg"><label id="fl1" data-uz="Ism" data-ru="Имя" data-en="Name">Ism</label><input type="text" id="fn" placeholder="Ismingiz" data-uz-ph="Ismingiz" data-ru-ph="Ваше имя" data-en-ph="Your name"></div>
+        <div class="fg"><label id="fl2" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</label><input type="tel" id="fph" placeholder="+998 __ ___ __ __"></div>
+      </div>
+      <div class="fg"><label id="fl3" data-uz="Elektron pochta" data-ru="Эл. почта" data-en="Email">Elektron pochta</label><input type="email" id="fem" placeholder="email@example.com"></div>
+      <div class="fg">
+        <label id="fl4" data-uz="Xizmat turi" data-ru="Тип услуги" data-en="Service">Xizmat turi</label>
+        <select id="fsel">
+          <option id="so0" data-uz="Tanlang..." data-ru="Выберите..." data-en="Select...">Tanlang...</option>
+          <option id="so1" data-uz="Ijtimoiy Konsultatsiya" data-ru="Социальная консультация" data-en="Social Consultation">Ijtimoiy Konsultatsiya</option>
+          <option id="so2" data-uz="AI Xizmati" data-ru="Услуга ИИ" data-en="AI Service">AI Xizmati</option>
+          <option id="so3" data-uz="Oila Yordami" data-ru="Поддержка семьи" data-en="Family Support">Oila Yordami</option>
+          <option id="so4" data-uz="Trening / Kurs" data-ru="Тренинг / Курс" data-en="Training / Course">Trening / Kurs</option>
+          <option id="so5" data-uz="Tadqiqot" data-ru="Исследование" data-en="Research">Tadqiqot</option>
+          <option id="so6" data-uz="Hamkorlik" data-ru="Сотрудничество" data-en="Collaboration">Hamkorlik</option>
+        </select>
+      </div>
+      <div class="fg"><label id="fl5" data-uz="Xabar" data-ru="Сообщение" data-en="Message">Xabar</label><textarea id="fmsg" placeholder="Xabaringizni yozing..." data-uz-ph="Xabaringizni yozing..." data-ru-ph="Напишите ваше сообщение..." data-en-ph="Write your message..."></textarea></div>
+      <button class="send-btn" onclick="sendForm()" id="sbtn" data-uz="✉ Yuborish" data-ru="✉ Отправить" data-en="✉ Send">✉ Yuborish</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="ft-copy">© 2024 <strong>Sarvar Xolnazarov</strong>. <span id="ftr" data-uz="Barcha huquqlar himoyalangan." data-ru="Все права защищены." data-en="All rights reserved.">Barcha huquqlar himoyalangan.</span> <span class="ft-love" id="ftl" data-uz="❤ O'zbekistonda yaratildi" data-ru="❤ Создано в Узбекистане" data-en="❤ Made in Uzbekistan">❤ O'zbekistonda yaratildi</span></div>
+  <div class="ft-links">
+    <a id="ftp" data-uz="Maxfiylik" data-ru="Конфиденц." data-en="Privacy">Maxfiylik</a>
+    <a id="ftt" data-uz="Shartlar" data-ru="Условия" data-en="Terms">Shartlar</a>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     AI CHATBOT
+═══════════════════════════════════════ -->
+<div id="cfab">
+  <button class="ctog" onclick="toggleChat()">
+    <span id="cicn">💬</span>
+    <div class="cnotif" id="cnotif">1</div>
+  </button>
+  <div class="cwin" id="cwin">
+    <div class="chdr">
+      <div class="cav">
+        <img src="images/sarvar.jpg" alt="Sarvar" onerror="this.parentElement.innerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;\'>S</div>'">
+      </div>
+      <div>
+        <div class="cin-name" id="chn" data-uz="Sarvar — AI Yordamchi" data-ru="Сарвар — AI Ассистент" data-en="Sarvar — AI Assistant">Sarvar — AI Yordamchi</div>
+        <div class="cin-st"><span class="cstdot"></span><span id="chst" data-uz="Onlayn" data-ru="Онлайн" data-en="Online">Onlayn</span></div>
+      </div>
+      <button class="cclose" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="cmsgs" id="cmsgs">
+      <div class="cmsg cmai" id="wmsg" data-uz="Assalomu alaykum! 👋 Men Sarvarning AI yordamchisiman. Ijtimoiy xizmatlar, konsultatsiya yoki AI xizmatlari haqida savollaringiz bormi?" data-ru="Ассаляму алейкум! 👋 Я AI-ассистент Сарвара. Есть вопросы о социальных услугах или AI сервисах?" data-en="Hello! 👋 I'm Sarvar's AI assistant. Do you have questions about social services or AI services?">Assalomu alaykum! 👋 Men Sarvarning AI yordamchisiman. Ijtimoiy xizmatlar, konsultatsiya yoki AI xizmatlari haqida savollaringiz bormi?</div>
+    </div>
+    <div class="cqr" id="cqr">
+      <button class="qrb" id="q1" data-uz="🤝 Xizmatlar" data-ru="🤝 Услуги" data-en="🤝 Services" onclick="qr('q1')">🤝 Xizmatlar</button>
+      <button class="qrb" id="q2" data-uz="📅 Uchrashuv" data-ru="📅 Встреча" data-en="📅 Meeting" onclick="qr('q2')">📅 Uchrashuv</button>
+      <button class="qrb" id="q3" data-uz="🏆 Yutuqlar" data-ru="🏆 Достижения" data-en="🏆 Achievements" onclick="qr('q3')">🏆 Yutuqlar</button>
+      <button class="qrb" id="q4" data-uz="🤖 AI xizmat" data-ru="🤖 AI сервис" data-en="🤖 AI service" onclick="qr('q4')">🤖 AI xizmat</button>
+    </div>
+    <div class="cinrow">
+      <input class="cinp" id="cinp"
+        data-uz-ph="Xabar yozing..." data-ru-ph="Напишите..." data-en-ph="Type a message..."
+        placeholder="Xabar yozing..."
+        onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="csend" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="tst">✅ <span id="tmsg" data-uz="Xabar yuborildi! Tez orada bog'lanamiz." data-ru="Сообщение отправлено! Скоро свяжемся." data-en="Message sent! We'll contact you soon.">Xabar yuborildi!</span></div>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+let lang = 'uz';
+
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  const nl = document.getElementById('navlinks');
+  if (window.innerWidth <= 860) nl.style.cssText = '';
+}
+
+function toggleNav() {
+  const nl = document.getElementById('navlinks');
+  const vis = nl.style.display === 'flex';
+  nl.style.cssText = vis ? '' : 'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:var(--navy2);padding:1.5rem;border-bottom:1px solid var(--border2);z-index:999;gap:1.2rem';
+}
+
+// Active nav on scroll
+window.addEventListener('scroll', () => {
+  ['home', 'about', 'services', 'achievements', 'portfolio', 'contact'].forEach(id => {
+    const s = document.getElementById(id);
+    if (!s) return;
+    const r = s.getBoundingClientRect();
+    document.querySelectorAll('.nav-links a[id]').forEach(a => {
+      const oc = a.getAttribute('onclick') || '';
+      if (oc.includes("'" + id + "'")) {
+        a.classList.toggle('active', r.top <= 80 && r.bottom > 80);
+      }
+    });
+  });
+});
+
+// ── LANGUAGE SWITCHER ──
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lb').forEach((b, i) => {
+    b.classList.toggle('active', ['uz', 'ru', 'en'][i] === l);
+  });
+  document.querySelectorAll('[data-' + l + ']').forEach(el => {
+    const v = el.getAttribute('data-' + l);
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = v;
+    } else {
+      el.innerHTML = v;
+    }
+  });
+  document.querySelectorAll('[data-' + l + '-ph]').forEach(el => {
+    el.placeholder = el.getAttribute('data-' + l + '-ph');
+  });
+}
+
+// ── AI CHATBOT ──
+let chatOpen = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('cwin').classList.toggle('open', chatOpen);
+  document.getElementById('cicn').textContent = chatOpen ? '✕' : '💬';
+  document.getElementById('cnotif').style.display = 'none';
+}
+
+const resp = {
+  uz: {
+    q1: 'Xizmatlarim:\n🤝 Ijtimoiy Konsultatsiya (1-sessiya bepul!)\n🤖 AI Yordamchi (24/7)\n👨‍👩‍👧 Oila & Jamoat Yordami\n🎓 Ta\'lim Metodikasi & Treninglar\n📝 Kontent Yaratish & Wikipedia\n📊 Ijtimoiy Tadqiqot & Tahlil',
+    q2: 'Uchrashuv uchun bog\'laning:\n📱 +998 94 576 20 36\n\nYoki aloqa formasini to\'ldiring. 24 soat ichida javob beraman!',
+    q3: 'Sarvarning yutuqlari:\n🏆 Wikipedia musobaqasi g\'olibi (2023)\n   — 1000+ O\'zbek Wikipedia maqolasi\n⭐ Five Million AI Leaders (2026)\n   — Prompt muhandislik sertifikati\n   — Uzb-UAE xalqaro tashabbus\n📜 Ko\'plab professional sertifikatlar',
+    q4: 'AI xizmatim:\n• 24/7 ijtimoiy maslahat\n• Prompt muhandislik asosida AI vositalar\n• Avtomatik yordam tizimi\n• AI tahlil va hisobotlar\n\nFive Million AI Leaders dasturi ishtirokchisiman!',
+    def: 'Tushundim! Sarvar bilan to\'g\'ridan-to\'g\'ri bog\'lanish uchun:\n📱 +998 94 576 20 36\n\nYoki pastdagi aloqa formasini to\'ldiring!'
+  },
+  ru: {
+    q1: 'Мои услуги:\n🤝 Социальная консультация (1-я бесплатно!)\n🤖 AI Ассистент (24/7)\n👨‍👩‍👧 Поддержка семьи\n🎓 Методика & Тренинги\n📝 Контент & Википедия\n📊 Социальные исследования',
+    q2: 'Для встречи свяжитесь:\n📱 +998 94 576 20 36\n\nИли заполните форму обратной связи. Отвечу в течение 24 часов!',
+    q3: 'Достижения Сарвара:\n🏆 Победитель конкурса Википедии (2023)\n   — 1000+ статей узб. Википедии\n⭐ Five Million AI Leaders (2026)\n   — Сертификат промт-инжиниринга\n   — Международная инициатива Узб-ОАЭ\n📜 Множество профессиональных сертификатов',
+    q4: 'Мой AI сервис:\n• Круглосуточные соц. консультации\n• AI инструменты на основе промт-инжиниринга\n• Автоматическая система помощи\n• AI анализ и отчёты\n\nУчастник программы Five Million AI Leaders!',
+    def: 'Понял! Для связи с Сарваром:\n📱 +998 94 576 20 36\n\nИли заполните контактную форму ниже!'
+  },
+  en: {
+    q1: 'My services:\n🤝 Social Consultation (1st session free!)\n🤖 AI Assistant (24/7)\n👨‍👩‍👧 Family & Community Support\n🎓 Educational Methodology & Trainings\n📝 Content Creation & Wikipedia\n📊 Social Research & Analysis',
+    q2: 'To schedule a meeting:\n📱 +998 94 576 20 36\n\nOr fill out the contact form. I\'ll respond within 24 hours!',
+    q3: 'Sarvar\'s achievements:\n🏆 Wikipedia Competition Winner (2023)\n   — 1000+ Uzbek Wikipedia articles\n⭐ Five Million AI Leaders (2026)\n   — Prompt engineering certificate\n   — Uzb-UAE international initiative\n📜 Multiple professional certificates',
+    q4: 'My AI service:\n• 24/7 social consultations\n• AI tools based on prompt engineering\n• Automated assistance system\n• AI analysis and reports\n\nFive Million AI Leaders program participant!',
+    def: 'Understood! To contact Sarvar directly:\n📱 +998 94 576 20 36\n\nOr fill out the contact form below!'
+  }
+};
+
+function addMsg(txt, isUser) {
+  const m = document.getElementById('cmsgs');
+  const d = document.createElement('div');
+  d.className = 'cmsg ' + (isUser ? 'cmu' : 'cmai');
+  d.style.whiteSpace = 'pre-line';
+  d.textContent = txt;
+  m.appendChild(d);
+  m.scrollTop = m.scrollHeight;
+}
+
+function showDots() {
+  const m = document.getElementById('cmsgs');
+  const d = document.createElement('div');
+  d.className = 'tdots'; d.id = 'tdot';
+  d.innerHTML = '<div class="td"></div><div class="td"></div><div class="td"></div>';
+  m.appendChild(d);
+  m.scrollTop = m.scrollHeight;
+}
+
+function hideDots() {
+  const t = document.getElementById('tdot');
+  if (t) t.remove();
+}
+
+function qr(key) {
+  const labels = {
+    q1: { uz: '🤝 Xizmatlar', ru: '🤝 Услуги', en: '🤝 Services' },
+    q2: { uz: '📅 Uchrashuv', ru: '📅 Встреча', en: '📅 Meeting' },
+    q3: { uz: '🏆 Yutuqlar', ru: '🏆 Достижения', en: '🏆 Achievements' },
+    q4: { uz: '🤖 AI xizmat', ru: '🤖 AI сервис', en: '🤖 AI service' }
+  };
+  addMsg(labels[key][lang], true);
+  document.getElementById('cqr').style.display = 'none';
+  showDots();
+  setTimeout(() => { hideDots(); addMsg(resp[lang][key], false); }, 900);
+}
+
+function sendChat() {
+  const inp = document.getElementById('cinp');
+  const v = inp.value.trim();
+  if (!v) return;
+  addMsg(v, true);
+  inp.value = '';
+  document.getElementById('cqr').style.display = 'none';
+  showDots();
+  setTimeout(() => {
+    hideDots();
+    const lv = v.toLowerCase();
+    const r = resp[lang];
+    let ans = r.def;
+    const kw = {
+      uz: { xizmat: r.q1, konsult: r.q1, 'uchr': r.q2, "bog'lan": r.q2, yutuk: r.q3, wikip: r.q3, sertif: r.q3, ai: r.q4, prompt: r.q4, salom: 'Vaalaykum assalom! 😊 Qanday yordam bera olaman?' },
+      ru: { услуг: r.q1, консульт: r.q1, встреч: r.q2, свяж: r.q2, достиж: r.q3, викип: r.q3, серт: r.q3, ии: r.q4, промт: r.q4, привет: 'Ассаляму алейкум! 😊 Чем могу помочь?' },
+      en: { service: r.q1, consul: r.q1, meet: r.q2, contact: r.q2, achiev: r.q3, wiki: r.q3, cert: r.q3, ai: r.q4, prompt: r.q4, hello: 'Hello! 😊 How can I help you?' }
+    };
+    const map = kw[lang] || kw.uz;
+    for (const [k, rv] of Object.entries(map)) {
+      if (lv.includes(k)) { ans = rv; break; }
+    }
+    addMsg(ans, false);
+  }, 1000);
+}
+
+// ── CONTACT FORM ──
+function sendForm() {
+  const n = document.getElementById('fn').value.trim();
+  const e = document.getElementById('fem').value.trim();
+  if (!n || !e) {
+    const msg = { uz: 'Ism va email majburiy!', ru: 'Имя и email обязательны!', en: 'Name and email required!' };
+    alert(msg[lang]);
+    return;
+  }
+  const t = document.getElementById('tst');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+  document.getElementById('fn').value = '';
+  document.getElementById('fem').value = '';
+  document.getElementById('fmsg').value = '';
+  document.getElementById('fph').value = '';
+}
+</script>
+
+</body>
+</html>
