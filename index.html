@@ -6,7 +6,7 @@
 <meta name="description" content="Sarvar Xolnazarov — Professional Ijtimoiy Xodim, AI Mutaxassis, Pedagog va Vikipedist">
 <meta name="keywords" content="Sarvar Xolnazarov, ijtimoiy xodim, social worker, AI, Uzbekistan, Wikipedia">
 <meta property="og:title" content="Sarvar Xolnazarov — Ijtimoiy Xodim & AI Mutaxassis">
-<meta property="og:description" content="Professional ijtimoiy xodim, pedagog va AI mutaxassis. Wikipedia musobaqasi g'oliblaridan biri.">
+<meta property="og:description" content="Professional ijtimoiy xodim, pedagog va AI mutaxassis. Wikipedia musobaqasi g'olibi.">
 <title>Sarvar Xolnazarov — Ijtimoiy Xodim & AI Mutaxassis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -251,6 +251,52 @@ section{padding:90px 5% 70px}
 
 /* ── FOOTER ── */
 footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* ── YANGILIKLAR ── */
+#yangiliklar{background:var(--navy2)}
+.tg-topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:1100px;margin:0 auto 2.2rem}
+.tg-channel-pill{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 18px 8px 8px;text-decoration:none;transition:all 0.25s}
+.tg-channel-pill:hover{border-color:rgba(42,171,238,0.5);transform:translateY(-2px);box-shadow:0 6px 24px rgba(42,171,238,0.12)}
+.tg-pill-ic{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2AABEE,#229ED9);display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:#fff;flex-shrink:0}
+.tg-pill-name{font-weight:700;font-size:0.85rem;color:var(--text)}
+.tg-pill-sub{font-size:0.7rem;color:#5DADE2}
+.tg-live-dot{width:8px;height:8px;border-radius:50%;background:#2AABEE;animation:pulse 2s infinite;flex-shrink:0}
+/* GRID: 3 ustun katta ekranda, 2 o'rta, 1 mobil */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1100px;margin:0 auto}
+@media(max-width:860px){.news-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.news-grid{grid-template-columns:1fr}}
+/* Katta karta — 1-yangilik, to'liq qator */
+.news-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);overflow:hidden;transition:all 0.3s;cursor:pointer;display:flex;flex-direction:column}
+.news-card:hover{border-color:rgba(42,171,238,0.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.news-card.featured{grid-column:1/-1;flex-direction:row;min-height:220px}
+@media(max-width:860px){.news-card.featured{flex-direction:column}}
+.news-img{background:linear-gradient(135deg,rgba(42,171,238,0.12),rgba(26,188,156,0.08));display:flex;align-items:center;justify-content:center;font-size:2.8rem;flex-shrink:0}
+.news-card.featured .news-img{width:320px;min-height:220px}
+@media(max-width:860px){.news-card.featured .news-img{width:100%;min-height:160px}}
+.news-card:not(.featured) .news-img{height:140px;font-size:2.2rem}
+.news-body{padding:1.3rem;display:flex;flex-direction:column;flex:1;gap:0.5rem}
+.news-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.news-cat{padding:2px 10px;border-radius:100px;font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+.news-cat.teal{background:rgba(26,188,156,0.1);color:var(--teal);border:1px solid rgba(26,188,156,0.2)}
+.news-cat.blue{background:rgba(42,171,238,0.1);color:#5DADE2;border:1px solid rgba(42,171,238,0.2)}
+.news-cat.gold{background:rgba(212,172,13,0.1);color:var(--gold);border:1px solid rgba(212,172,13,0.2)}
+.news-date{font-size:0.68rem;color:var(--text3);margin-left:auto}
+.news-title{font-family:var(--fh);font-size:1.05rem;font-weight:700;line-height:1.35;color:var(--text)}
+.news-card.featured .news-title{font-size:1.3rem}
+.news-excerpt{font-size:0.82rem;color:var(--text2);line-height:1.65;flex:1}
+.news-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.7rem;border-top:1px solid var(--border2);margin-top:auto}
+.news-src{display:flex;align-items:center;gap:5px;font-size:0.68rem;color:var(--text3)}
+.news-src-dot{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#2AABEE,#229ED9);display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:#fff}
+.news-read{font-size:0.72rem;font-weight:600;color:#5DADE2;text-decoration:none;transition:opacity 0.2s}
+.news-read:hover{opacity:0.75}
+/* Pastki kanal banner */
+.tg-cta{max-width:1100px;margin:2rem auto 0;background:linear-gradient(135deg,rgba(42,171,238,0.08),rgba(26,188,156,0.05));border:1px solid rgba(42,171,238,0.15);border-radius:var(--r2);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.tg-cta-left{display:flex;align-items:center;gap:12px}
+.tg-cta-ic{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2AABEE,#229ED9);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;flex-shrink:0}
+.tg-cta-title{font-weight:700;font-size:0.95rem;margin-bottom:2px}
+.tg-cta-sub{font-size:0.75rem;color:var(--text2)}
+.tg-cta-btn{padding:10px 24px;background:linear-gradient(135deg,#2AABEE,#229ED9);color:#fff;border:none;border-radius:100px;font-size:0.83rem;font-weight:700;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s;white-space:nowrap}
+.tg-cta-btn:hover{opacity:0.88;transform:translateY(-1px)}
 .ft-copy{font-size:0.76rem;color:var(--text3)}
 .ft-love{color:var(--teal)}
 .ft-links{display:flex;gap:1.5rem}
@@ -327,6 +373,7 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
     <a onclick="goTo('services')" id="n2" data-uz="Xizmatlar" data-ru="Услуги" data-en="Services">Xizmatlar</a>
     <a onclick="goTo('achievements')" id="n3" data-uz="Yutuqlar" data-ru="Достижения" data-en="Achievements">Yutuqlar</a>
     <a onclick="goTo('portfolio')" id="n4" data-uz="Portfolio" data-ru="Портфолио" data-en="Portfolio">Portfolio</a>
+    <a onclick="goTo('yangiliklar')" id="n45" data-uz="Yangiliklar" data-ru="Новости" data-en="News">Yangiliklar</a>
     <a onclick="goTo('contact')" id="n5" data-uz="Aloqa" data-ru="Контакт" data-en="Contact">Aloqa</a>
     <div class="lang-sw">
       <button class="lb active" onclick="setLang('uz')">UZ</button>
@@ -363,10 +410,10 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
         <span class="role-pill rp4" id="rp4" data-uz="Vikipedist" data-ru="Википедист" data-en="Wikipedist">Vikipedist</span>
       </div>
       <p class="hero-desc" id="hdesc"
-         data-uz="Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'oliblaridan biri</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi."
+         data-uz="Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'olibi</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi."
          data-ru="Профессиональный социальный работник и педагог. Опытный специалист в социальных услугах, методике обучения. <strong>Победитель конкурса Википедии 2023</strong> — автор 1000+ статей."
          data-en="Professional social worker and educator. Experienced specialist in social services and educational methodology. <strong>Wikipedia Competition Winner 2023</strong> — author of 1000+ articles.">
-        Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'oliblaridan biri</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi.
+        Professional ijtimoiy xodim va pedagog. Ijtimoiy xizmatlar, ta'lim metodikasi va raqamli bilim rivojlantirishda tajribali mutaxassis. <strong>2023-yilgi Vikipediya musobaqasi g'olibi</strong> — 1000+ o'zbek Vikipediya maqolasi muallifi.
       </p>
       <div class="hero-btns">
         <button class="btn btn-p" onclick="goTo('services')" id="hb1" data-uz="Xizmatlarim" data-ru="Мои услуги" data-en="My Services">Xizmatlarim</button>
@@ -379,14 +426,14 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
       </div>
     </div>
     <!-- 
-      RASM: Rasmingizni "img src="logo/sarvar.jpg"" papkaga joylashtiring
+      RASM: Rasmingizni "images/sarvar.jpg" papkaga joylashtiring
       va quyidagi src ni shunga o'zgartiring
     -->
     <div class="hero-photo-wrap">
       <div class="cert-badge">AI Leaders 2026 ★</div>
       <div class="photo-glow"></div>
       <div class="hero-photo">
-        <img src="logo/sarvar.jpg">" alt="Sarvar Xolnazarov" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:5rem;\'>👨‍💼</div>'">
+        <img src="images/sarvar.jpg" alt="Sarvar Xolnazarov" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:5rem;\'>👨‍💼</div>'">
       </div>
       <div class="photo-badge" id="phbadge" data-uz="Toshkent, O'zbekiston" data-ru="Ташкент, Узбекистан" data-en="Tashkent, Uzbekistan">📍 Toshkent, O'zbekiston</div>
     </div>
@@ -404,7 +451,7 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
   <div class="about-grid">
     <div class="about-card">
       <div class="about-avatar">
-        <img src="logo/sarvar.jpg" alt="Sarvar Xolnazarov" onerror="this.parentElement.style.display='none'">
+        <img src="images/sarvar.jpg" alt="Sarvar Xolnazarov" onerror="this.parentElement.style.display='none'">
       </div>
       <div class="about-contact-item">
         <div class="aci-icon">📍</div>
@@ -412,7 +459,7 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
       </div>
       <div class="about-contact-item">
         <div class="aci-icon">📱</div>
-        <div class="aci-val"><strong id="acl2" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 94 576 20 36</span></div>
+        <div class="aci-val"><strong id="acl2" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 95 986 64 26</span></div>
       </div>
       <div class="about-contact-item">
         <div class="aci-icon">📧</div>
@@ -431,7 +478,7 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
     <div class="about-right">
       <h3 id="abh3" data-uz="Insonlarga xizmat — mening hayot yo'lim" data-ru="Служение людям — мой жизненный путь" data-en="Serving people — my life path">Insonlarga xizmat — mening hayot yo'lim</h3>
       <p id="abp1" data-uz="Professional ijtimoiy xodim va pedagog sifatida ijtimoiy xizmatlar, ta'lim metodikasi, tadqiqot va raqamli bilim rivojlantirish sohasida tajribaga egaman. Muloqot, tahliliy fikrlash, muammo yechish va jamoat yordamida malakali mutaxassisman." data-ru="Как профессиональный социальный работник и педагог, имею опыт в области социальных услуг, методологии образования и развития цифровых знаний. Квалифицированный специалист в общении, аналитическом мышлении и решении проблем." data-en="As a professional social worker and educator, I have experience in social services, educational methodology, research, and digital knowledge development. Skilled in communication, analytical thinking, problem-solving, and community support.">Professional ijtimoiy xodim va pedagog sifatida ijtimoiy xizmatlar, ta'lim metodikasi, tadqiqot va raqamli bilim rivojlantirish sohasida tajribaga egaman.</p>
-      <p id="abp2" data-uz="Five Million AI Leaders dasturi ishtirokchisi — suniy intellekt, innovatsiya, ta'lim va strategik rivojlanishga qiziquvchi mutaxassis. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'oliblaridan biri bo'ldim." data-ru="Участник программы Five Million AI Leaders — специалист, увлечённый ИИ, инновациями и стратическим развитием. В 2023 году написал 1000+ статей и стал победителем конкурса Википедии." data-en="Five Million AI Leaders program participant — passionate about AI, innovation, education and strategic development. Won the Wikipedia competition in 2023 by writing 1000+ articles for Uzbek Wikipedia.">Five Million AI Leaders dasturi ishtirokchisi. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'olibi bo'ldim.</p>
+      <p id="abp2" data-uz="Five Million AI Leaders dasturi ishtirokchisi — suniy intellekt, innovatsiya, ta'lim va strategik rivojlanishga qiziquvchi mutaxassis. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'olibi bo'ldim." data-ru="Участник программы Five Million AI Leaders — специалист, увлечённый ИИ, инновациями и стратическим развитием. В 2023 году написал 1000+ статей и стал победителем конкурса Википедии." data-en="Five Million AI Leaders program participant — passionate about AI, innovation, education and strategic development. Won the Wikipedia competition in 2023 by writing 1000+ articles for Uzbek Wikipedia.">Five Million AI Leaders dasturi ishtirokchisi. 2023-yilda O'zbek Vikipediyasida 1000+ maqola yozib, musobaqa g'olibi bo'ldim.</p>
       <div class="skills-wrap">
         <div class="skill-card"><div class="sk-top"><span id="sk1" data-uz="Ijtimoiy Ish" data-ru="Социальная работа" data-en="Social Work">Ijtimoiy Ish</span><span class="sk-pct">95%</span></div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
         <div class="skill-card"><div class="sk-top"><span id="sk2" data-uz="Ta'lim Metodikasi" data-ru="Методика обучения" data-en="Edu. Methodology">Ta'lim Metodikasi</span><span class="sk-pct">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%"></div></div></div>
@@ -575,6 +622,209 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
 </section>
 
 <!-- ═══════════════════════════════════════
+     YANGILIKLAR — TELEGRAM KANAL
+═══════════════════════════════════════ -->
+<section id="yangiliklar">
+  <div class="sec-header">
+    <div class="sec-tag" id="ygtag" data-uz="Yangiliklar" data-ru="Новости" data-en="News">Yangiliklar</div>
+    <h2 class="sec-title" id="ygtitle" data-uz="Ijtimoiy Himoya Yangiliklari" data-ru="Новости социальной защиты" data-en="Social Protection News">Ijtimoiy Himoya Yangiliklari</h2>
+    <p class="sec-desc" id="ygdesc" data-uz="@ijtimoiyhimoya_agentligi Telegram kanalidan so'nggi yangiliklar" data-ru="Последние новости из Telegram-канала @ijtimoiyhimoya_agentligi" data-en="Latest news from @ijtimoiyhimoya_agentligi Telegram channel">@ijtimoiyhimoya_agentligi kanalidan so'nggi yangiliklar</p>
+  </div>
+
+  <!-- Kanal topbar -->
+  <div class="tg-topbar">
+    <a class="tg-channel-pill" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank">
+      <div class="tg-pill-ic">✈</div>
+      <div>
+        <div class="tg-pill-name">Ijtimoiy himoya agentligi</div>
+        <div class="tg-pill-sub">@ijtimoiyhimoya_agentligi</div>
+      </div>
+      <div class="tg-live-dot" style="margin-left:6px"></div>
+    </a>
+    <div style="font-size:0.75rem;color:var(--text3)" id="yg-updated" data-uz="Rasmiy kanal yangiliklari" data-ru="Новости официального канала" data-en="Official channel news">Rasmiy kanal yangiliklari</div>
+  </div>
+
+  <!-- YANGILIKLAR GRID — 3 ustun -->
+  <div class="news-grid" id="news-grid">
+
+    <!-- 1-yangilik: FEATURED (to'liq qator) -->
+    <div class="news-card featured" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(42,171,238,0.15),rgba(26,188,156,0.1))">🏛️</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat teal" id="nc1" data-uz="Muhim" data-ru="Важно" data-en="Important">Muhim</span>
+          <span class="news-date" id="nd1" data-uz="So'nggi yangilik" data-ru="Последняя новость" data-en="Latest">So'nggi yangilik</span>
+        </div>
+        <div class="news-title" id="nt1"
+          data-uz="Ijtimoiy himoya tizimi yangilandi: fuqarolarga yangi imkoniyatlar"
+          data-ru="Система социальной защиты обновлена: новые возможности для граждан"
+          data-en="Social protection system updated: new opportunities for citizens">
+          Ijtimoiy himoya tizimi yangilandi: fuqarolarga yangi imkoniyatlar
+        </div>
+        <div class="news-excerpt" id="ne1"
+          data-uz="Ijtimoiy himoya agentligi yangi dasturlar doirasida muhtoj fuqarolarga ko'rsatiladigan yordam hajmini kengaytirishni e'lon qildi. Yangi tartibga ko'ra, ariza topshirish jarayoni soddalashtirilib, online xizmatlar kengaytirildi."
+          data-ru="Агентство социальной защиты объявило о расширении объёма помощи нуждающимся гражданам в рамках новых программ. Процедура подачи заявлений упрощена, онлайн-услуги расширены."
+          data-en="The Social Protection Agency announced an expansion of assistance to needy citizens under new programs. The application process has been simplified and online services expanded.">
+          Ijtimoiy himoya agentligi yangi dasturlar doirasida muhtoj fuqarolarga ko'rsatiladigan yordam hajmini kengaytirishni e'lon qildi. Yangi tartibga ko'ra, ariza topshirish jarayoni soddalashtirilib, online xizmatlar kengaytirildi.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>@ijtimoiyhimoya_agentligi</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr1" data-uz="To'liq o'qish →" data-ru="Читать полностью →" data-en="Read more →">To'liq o'qish →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2-yangilik -->
+    <div class="news-card" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(26,188,156,0.12),rgba(93,173,226,0.08))">👨‍👩‍👧</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat teal" id="nc2" data-uz="Oila" data-ru="Семья" data-en="Family">Oila</span>
+          <span class="news-date" id="nd2" data-uz="Yangi" data-ru="Новое" data-en="New">Yangi</span>
+        </div>
+        <div class="news-title" id="nt2"
+          data-uz="Ko'p bolali oilalarga nafaqa miqdori oshirildi"
+          data-ru="Увеличено пособие для многодетных семей"
+          data-en="Benefits for large families increased">
+          Ko'p bolali oilalarga nafaqa miqdori oshirildi
+        </div>
+        <div class="news-excerpt" id="ne2"
+          data-uz="3 va undan ortiq farzandli oilalar uchun oylik nafaqa miqdori yangilangan me'yorlar asosida belgilanib, to'lovlar kengaytirilmoqda."
+          data-ru="Размер ежемесячного пособия для семей с тремя и более детьми устанавливается по обновлённым нормам, выплаты расширяются."
+          data-en="Monthly allowances for families with three or more children are set according to updated norms, with expanded payments.">
+          3 va undan ortiq farzandli oilalar uchun oylik nafaqa miqdori yangilangan me'yorlar asosida belgilanib, to'lovlar kengaytirilmoqda.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>Telegram</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr2" data-uz="O'qish →" data-ru="Читать →" data-en="Read →">O'qish →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-yangilik -->
+    <div class="news-card" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(212,172,13,0.12),rgba(26,188,156,0.06))">🤖</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat gold" id="nc3" data-uz="Raqamlashtirish" data-ru="Цифровизация" data-en="Digitalization">Raqamlashtirish</span>
+          <span class="news-date" id="nd3" data-uz="Yangi" data-ru="Новое" data-en="New">Yangi</span>
+        </div>
+        <div class="news-title" id="nt3"
+          data-uz="Ijtimoiy xizmatlar uchun yangi raqamli platforma ishga tushirildi"
+          data-ru="Запущена новая цифровая платформа для социальных услуг"
+          data-en="New digital platform for social services launched">
+          Ijtimoiy xizmatlar uchun yangi raqamli platforma ishga tushirildi
+        </div>
+        <div class="news-excerpt" id="ne3"
+          data-uz="Fuqarolar ijtimoiy xizmatlarni yangi platforma orqali onlayn ravishda olishlari, hujjatlarni yuklashlari va ariza holatini kuzatishlari mumkin bo'ladi."
+          data-ru="Граждане смогут получать социальные услуги онлайн через новую платформу, загружать документы и отслеживать статус заявок."
+          data-en="Citizens can receive social services online through the new platform, upload documents and track application status.">
+          Fuqarolar ijtimoiy xizmatlarni yangi platforma orqali onlayn ravishda olishlari, hujjatlarni yuklashlari va ariza holatini kuzatishlari mumkin.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>Telegram</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr3" data-uz="O'qish →" data-ru="Читать →" data-en="Read →">O'qish →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4-yangilik -->
+    <div class="news-card" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(93,173,226,0.12),rgba(26,188,156,0.06))">🏥</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat blue" id="nc4" data-uz="Salomatlik" data-ru="Здоровье" data-en="Health">Salomatlik</span>
+          <span class="news-date" id="nd4" data-uz="Yangi" data-ru="Новое" data-en="New">Yangi</span>
+        </div>
+        <div class="news-title" id="nt4"
+          data-uz="Nogiron fuqarolar uchun tibbiy reabilitatsiya dasturi kengaytirildi"
+          data-ru="Расширена программа медицинской реабилитации для граждан с инвалидностью"
+          data-en="Medical rehabilitation program for people with disabilities expanded">
+          Nogiron fuqarolar uchun tibbiy reabilitatsiya dasturi kengaytirildi
+        </div>
+        <div class="news-excerpt" id="ne4"
+          data-uz="Yangi dastur doirasida reabilitatsiya xizmatlaridan foydalanish chegarasi kengaytirildi. Uyda parvarish xizmatlari va texnik vositalar bepul taqdim etiladi."
+          data-ru="В рамках новой программы расширен доступ к реабилитационным услугам. Домашний уход и технические средства предоставляются бесплатно."
+          data-en="Under the new program, access to rehabilitation services has been expanded. Home care and technical aids are provided free of charge.">
+          Yangi dastur doirasida reabilitatsiya xizmatlaridan foydalanish chegarasi kengaytirildi. Uyda parvarish va texnik vositalar bepul beriladi.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>Telegram</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr4" data-uz="O'qish →" data-ru="Читать →" data-en="Read →">O'qish →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5-yangilik -->
+    <div class="news-card" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(26,188,156,0.1),rgba(212,172,13,0.08))">📚</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat teal" id="nc5" data-uz="Ta'lim" data-ru="Образование" data-en="Education">Ta'lim</span>
+          <span class="news-date" id="nd5" data-uz="Yangi" data-ru="Новое" data-en="New">Yangi</span>
+        </div>
+        <div class="news-title" id="nt5"
+          data-uz="Ijtimoiy xodimlar uchun malaka oshirish kurslari boshlandi"
+          data-ru="Начались курсы повышения квалификации для социальных работников"
+          data-en="Professional development courses for social workers have begun">
+          Ijtimoiy xodimlar uchun malaka oshirish kurslari boshlandi
+        </div>
+        <div class="news-excerpt" id="ne5"
+          data-uz="Butun O'zbekiston bo'ylab ijtimoiy xodimlar uchun yangi malaka oshirish dasturi ishga tushirildi. AI va zamonaviy usullardan foydalanish bo'yicha o'quv modullari kiritilgan."
+          data-ru="По всему Узбекистану запущена новая программа повышения квалификации социальных работников. Включены обучающие модули по использованию ИИ и современных методов."
+          data-en="A new professional development program for social workers has been launched across Uzbekistan, including training modules on AI and modern methods.">
+          Butun O'zbekiston bo'ylab ijtimoiy xodimlar uchun yangi malaka oshirish dasturi ishga tushirildi. AI modullari ham kiritilgan.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>Telegram</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr5" data-uz="O'qish →" data-ru="Читать →" data-en="Read →">O'qish →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6-yangilik -->
+    <div class="news-card" onclick="window.open('https://t.me/ijtimoiyhimoya_agentligi','_blank')">
+      <div class="news-img" style="background:linear-gradient(135deg,rgba(167,139,250,0.1),rgba(42,171,238,0.08))">💼</div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-cat blue" id="nc6" data-uz="Bandlik" data-ru="Занятость" data-en="Employment">Bandlik</span>
+          <span class="news-date" id="nd6" data-uz="Yangi" data-ru="Новое" data-en="New">Yangi</span>
+        </div>
+        <div class="news-title" id="nt6"
+          data-uz="Ishsizlarga qayta tayyorlov dasturi yangilandi"
+          data-ru="Обновлена программа переподготовки безработных"
+          data-en="Retraining program for unemployed citizens updated">
+          Ishsizlarga qayta tayyorlov dasturi yangilandi
+        </div>
+        <div class="news-excerpt" id="ne6"
+          data-uz="Ishsiz fuqarolar uchun kasbiy qayta tayyorlov dasturlari yangilanib, raqamli kasblarga yo'naltirilgan kurslar soni oshirildi. Kurslar davomida stipendiya to'lanadi."
+          data-ru="Программы профессиональной переподготовки для безработных обновлены, увеличено число курсов по цифровым специальностям. В период курсов выплачивается стипендия."
+          data-en="Professional retraining programs for unemployed citizens have been updated with more digital skills courses. Stipends are paid during training.">
+          Ishsiz fuqarolar uchun kasbiy qayta tayyorlov dasturlari yangilanib, raqamli kasblarga kurslar oshirildi. Stipendiya to'lanadi.
+        </div>
+        <div class="news-footer">
+          <div class="news-src"><div class="news-src-dot">✈</div><span>Telegram</span></div>
+          <a class="news-read" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" onclick="event.stopPropagation()" id="nr6" data-uz="O'qish →" data-ru="Читать →" data-en="Read →">O'qish →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pastki kanal CTA -->
+  <div class="tg-cta">
+    <div class="tg-cta-left">
+      <div class="tg-cta-ic">✈</div>
+      <div>
+        <div class="tg-cta-title" id="cta-title" data-uz="Barcha yangiliklar — Telegram kanalda" data-ru="Все новости — в Telegram-канале" data-en="All news — in the Telegram channel">Barcha yangiliklar — Telegram kanalda</div>
+        <div class="tg-cta-sub" id="cta-sub" data-uz="Kanalga obuna bo'ling va har kuni yangi ma'lumot oling" data-ru="Подпишитесь и получайте свежую информацию каждый день" data-en="Subscribe and get fresh information every day">Kanalga obuna bo'ling va har kuni yangi ma'lumot oling</div>
+      </div>
+    </div>
+    <a class="tg-cta-btn" href="https://t.me/ijtimoiyhimoya_agentligi" target="_blank" id="cta-btn" data-uz="✈ Kanalga o'tish" data-ru="✈ Перейти в канал" data-en="✈ Go to channel">✈ Kanalga o'tish</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════ -->
 <section id="contact">
@@ -586,13 +836,13 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
     <div class="ct-info">
       <h3 id="cth3" data-uz="Sizga yordam berishga tayyorman" data-ru="Готов вам помочь" data-en="Ready to help you">Sizga yordam berishga tayyorman</h3>
       <p id="ctp" data-uz="Ijtimoiy maslahat, AI xizmatlari, treninglar yoki hamkorlik uchun murojaat qiling. 24 soat ichida javob beraman." data-ru="Обращайтесь по вопросам социальных консультаций, AI услуг, тренингов или сотрудничества. Отвечу в течение 24 часов." data-en="Contact for social consultation, AI services, trainings or collaboration. I will respond within 24 hours.">Ijtimoiy maslahat, AI xizmatlari, treninglar yoki hamkorlik uchun murojaat qiling.</p>
-      <div class="ct-item"><div class="ct-ic">📱</div><div class="ct-det"><strong id="ctl1" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 94 576 20 36</span></div></div>
+      <div class="ct-item"><div class="ct-ic">📱</div><div class="ct-det"><strong id="ctl1" data-uz="Telefon" data-ru="Телефон" data-en="Phone">Telefon</strong><span>+998 95 986 64 26</span></div></div>
       <div class="ct-item"><div class="ct-ic">📍</div><div class="ct-det"><strong id="ctl2" data-uz="Joylashuv" data-ru="Местонахождение" data-en="Location">Joylashuv</strong><span id="ctv2" data-uz="O'zbekiston" data-ru="Узбекистан" data-en="Uzbekistan">O'zbekiston</span></div></div>
       <div class="ct-item"><div class="ct-ic">🌐</div><div class="ct-det"><strong id="ctl3" data-uz="Tillar" data-ru="Языки" data-en="Languages">Tillar</strong><span id="ctv3" data-uz="O'zbek, Ingliz, Rus" data-ru="Узбекский, Английский, Русский" data-en="Uzbek, English, Russian">O'zbek, Ingliz, Rus</span></div></div>
       <div class="ct-item"><div class="ct-ic">🕐</div><div class="ct-det"><strong id="ctl4" data-uz="Javob vaqti" data-ru="Время ответа" data-en="Response time">Javob vaqti</strong><span id="ctv4" data-uz="24 soat ichida" data-ru="В течение 24 часов" data-en="Within 24 hours">24 soat ichida</span></div></div>
       <!-- IJTIMOIY TARMOQLAR: href larni o'z havolalaringizga almashtiring -->
       <div class="social-row">
-        <a class="soc-btn" href="https://t.me/yourusername" target="_blank" title="Telegram">✈</a>
+        <a class="soc-btn" href="https://t.me/ijtxodim202" target="_blank" title="Telegram">✈</a>
         <a class="soc-btn" href="https://instagram.com/yourusername" target="_blank" title="Instagram">📸</a>
         <a class="soc-btn" href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">💼</a>
         <a class="soc-btn" href="https://uz.wikipedia.org/wiki/User:yourusername" target="_blank" title="Wikipedia">📖</a>
@@ -644,7 +894,7 @@ footer{background:var(--navy2);border-top:1px solid var(--border2);padding:1.8re
   <div class="cwin" id="cwin">
     <div class="chdr">
       <div class="cav">
-        <img src="sarvar.jpg" alt="Sarvar" onerror="this.parentElement.innerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;\'>S</div>'">
+        <img src="images/sarvar.jpg" alt="Sarvar" onerror="this.parentElement.innerHTML='<div style=\'width:34px;height:34px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;\'>S</div>'">
       </div>
       <div>
         <div class="cin-name" id="chn" data-uz="Sarvar — AI Yordamchi" data-ru="Сарвар — AI Ассистент" data-en="Sarvar — AI Assistant">Sarvar — AI Yordamchi</div>
@@ -693,7 +943,7 @@ function toggleNav() {
 
 // Active nav on scroll
 window.addEventListener('scroll', () => {
-  ['home', 'about', 'services', 'achievements', 'portfolio', 'contact'].forEach(id => {
+  ['home', 'about', 'services', 'achievements', 'portfolio', 'yangiliklar', 'contact'].forEach(id => {
     const s = document.getElementById(id);
     if (!s) return;
     const r = s.getBoundingClientRect();
@@ -738,24 +988,24 @@ function toggleChat() {
 const resp = {
   uz: {
     q1: 'Xizmatlarim:\n🤝 Ijtimoiy Konsultatsiya (1-sessiya bepul!)\n🤖 AI Yordamchi (24/7)\n👨‍👩‍👧 Oila & Jamoat Yordami\n🎓 Ta\'lim Metodikasi & Treninglar\n📝 Kontent Yaratish & Wikipedia\n📊 Ijtimoiy Tadqiqot & Tahlil',
-    q2: 'Uchrashuv uchun bog\'laning:\n📱 +998 94 576 20 36\n\nYoki aloqa formasini to\'ldiring. 24 soat ichida javob beraman!',
+    q2: 'Uchrashuv uchun bog\'laning:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nYoki aloqa formasini to\'ldiring. 24 soat ichida javob beraman!',
     q3: 'Sarvarning yutuqlari:\n🏆 Wikipedia musobaqasi g\'olibi (2023)\n   — 1000+ O\'zbek Wikipedia maqolasi\n⭐ Five Million AI Leaders (2026)\n   — Prompt muhandislik sertifikati\n   — Uzb-UAE xalqaro tashabbus\n📜 Ko\'plab professional sertifikatlar',
     q4: 'AI xizmatim:\n• 24/7 ijtimoiy maslahat\n• Prompt muhandislik asosida AI vositalar\n• Avtomatik yordam tizimi\n• AI tahlil va hisobotlar\n\nFive Million AI Leaders dasturi ishtirokchisiman!',
-    def: 'Tushundim! Sarvar bilan to\'g\'ridan-to\'g\'ri bog\'lanish uchun:\n📱 +998 94 576 20 36\n\nYoki pastdagi aloqa formasini to\'ldiring!'
+    def: 'Tushundim! Sarvar bilan to\'g\'ridan-to\'g\'ri bog\'lanish uchun:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nYoki pastdagi aloqa formasini to\'ldiring!'
   },
   ru: {
     q1: 'Мои услуги:\n🤝 Социальная консультация (1-я бесплатно!)\n🤖 AI Ассистент (24/7)\n👨‍👩‍👧 Поддержка семьи\n🎓 Методика & Тренинги\n📝 Контент & Википедия\n📊 Социальные исследования',
-    q2: 'Для встречи свяжитесь:\n📱 +998 94 576 20 36\n\nИли заполните форму обратной связи. Отвечу в течение 24 часов!',
+    q2: 'Для встречи свяжитесь:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nИли заполните форму обратной связи. Отвечу в течение 24 часов!',
     q3: 'Достижения Сарвара:\n🏆 Победитель конкурса Википедии (2023)\n   — 1000+ статей узб. Википедии\n⭐ Five Million AI Leaders (2026)\n   — Сертификат промт-инжиниринга\n   — Международная инициатива Узб-ОАЭ\n📜 Множество профессиональных сертификатов',
     q4: 'Мой AI сервис:\n• Круглосуточные соц. консультации\n• AI инструменты на основе промт-инжиниринга\n• Автоматическая система помощи\n• AI анализ и отчёты\n\nУчастник программы Five Million AI Leaders!',
-    def: 'Понял! Для связи с Сарваром:\n📱 +998 94 576 20 36\n\nИли заполните контактную форму ниже!'
+    def: 'Понял! Для связи с Сарваром:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nИли заполните контактную форму ниже!'
   },
   en: {
     q1: 'My services:\n🤝 Social Consultation (1st session free!)\n🤖 AI Assistant (24/7)\n👨‍👩‍👧 Family & Community Support\n🎓 Educational Methodology & Trainings\n📝 Content Creation & Wikipedia\n📊 Social Research & Analysis',
-    q2: 'To schedule a meeting:\n📱 +998 94 576 20 36\n\nOr fill out the contact form. I\'ll respond within 24 hours!',
+    q2: 'To schedule a meeting:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nOr fill out the contact form. I\'ll respond within 24 hours!',
     q3: 'Sarvar\'s achievements:\n🏆 Wikipedia Competition Winner (2023)\n   — 1000+ Uzbek Wikipedia articles\n⭐ Five Million AI Leaders (2026)\n   — Prompt engineering certificate\n   — Uzb-UAE international initiative\n📜 Multiple professional certificates',
     q4: 'My AI service:\n• 24/7 social consultations\n• AI tools based on prompt engineering\n• Automated assistance system\n• AI analysis and reports\n\nFive Million AI Leaders program participant!',
-    def: 'Understood! To contact Sarvar directly:\n📱 +998 94 576 20 36\n\nOr fill out the contact form below!'
+    def: 'Understood! To contact Sarvar directly:\n📱 +998 95 986 64 26\n✈ @ijtxodim202\n\nOr fill out the contact form below!'
   }
 };
 
