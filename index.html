@@ -1219,7 +1219,7 @@ function toggleLeads() {
 
 // ── CONTACT FORM: LOCAL SAVE + TELEGRAM + MODAL ──
 async function sendTgBot(d) {
-  const TOKEN   = '7XXXXXXXXX:AAXXXXXXXXXXXXXXXXXXXXXXXXXX'; // ← O'z Telegram Bot tokeningiz
+  const TOKEN   = '@ijtxodim202'; // ← O'z Telegram Bot tokeningiz
   const CHAT_ID = 'SIZNING_CHAT_ID';                        // ← @userinfobot dan oling
   const text = `📩 <b>Yangi murojaat!</b>\n\n👤 <b>Ism:</b> ${d.name}\n📱 <b>Tel:</b> ${d.phone||'—'}\n📧 <b>Email:</b> ${d.email||'—'}\n🎯 <b>Xizmat:</b> ${d.service||'—'}\n💬 <b>Xabar:</b> ${d.message||'—'}\n\n🕐 ${d.time}\n🆔 #${d.id}`;
   try {
